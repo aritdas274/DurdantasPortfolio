@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durdanta's Portfolio</title>
+    <style>
+        body {
+            background-color: #0a1920;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        #summery {
+            height: 15vh;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        #textContainer {
+            display: grid;
+            height: 15vh;
+            grid-template-columns: 0.5fr 2fr;
+            grid-template-rows: 2fr 1fr 1fr;
+        }
+
+        /* p{
+            display: inline-block;
+        } */
+
+        #text1 {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 2vw;
+            padding-top: 1.5vh;
+            font-size: 120%;
+            transform: translate();
+        }
+
+        #text2 {
+            color: #f9cb6c;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 150%;
+        }
+
+        #text3 {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 2vw;
+            font-size: 50%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            transform: translate(0, -3vh);
+        }
+
+        #contact {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            transform: translate(2vw, -3vh);
+            text-decoration: none;
+        }
+
+        #contactB {
+            background-color: #0a1920;
+            color: #f9cb6c;
+            font-size: 80%;
+            padding: 10%;
+            padding-right: 105%;
+            text-align: center;
+            text-wrap: nowrap;
+            /* border: 2px solid #f9cb6c; */
+            border-radius: 0.5rem;
+            position: relative;
+
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        #contactB::after,
+        #contactB::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), red, blue, blue, red);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            border-radius: 0.5rem;
+            padding: 3px;
+            animation: 1s spin linear infinite;
+            filter: blur(2px);
+        }
+
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        #bgi {
+            height: 15vh;
+            aspect-ratio: 2486/2073;
+        }
+
+        #aboutMe {
+            display: grid;
+            width: 100vw;
+            grid-template-columns: 2fr 8fr;
+            grid-template-rows: 1fr 8fr;
+        }
+
+        h3 {
+            color: white;
+            padding-left: 0.5rem;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        #dp {
+            height: 50px;
+            aspect-ratio: 1/1;
+            align-items: center;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            padding: 10%;
+        }
+
+        #about {
+            color: white;
+            background-color: #0a1920;
+            padding: 8%;
+            margin: 5%;
+            border: 0.2rem solid #f9cb6c;
+            border-radius: 2rem;
+            position: relative;
+        }
+
+        #about::after,
+        #about::before {
+            content: '';
+            position: absolute;
+            height: 50%;
+            width: 50%;
+            background-image: conic-gradient(from var(--angle), red, blue, blue, red);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -3;
+            border-radius: 0.5rem;
+            padding: 3px;
+            animation: 1s spin linear infinite;
+            filter: blur(10rem);
+        }
+
+        #mySkill{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        #mySkillT{
+            text-align: center;
+        }
+
+        #skillSet {
+            width: 80vw;
+            transform: translateX(-1%);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 6%;
+            margin: 5%;
+            padding: 5%;
+            background-image: url("https://i.ibb.co/xHhzqr4/forest-7543646-1280.jpg");
+            border-radius: 1rem;
+            border: 0.1rem solid white;
+        }
+
+        @keyframes ossilate{
+            0%{
+                width: 50%;
+            }
+
+            50%{
+                width: 80%;
+            }
+
+            100%{
+                width: 50%;
+            }
+        }
+
+        .skill {
+            transform: translateX(-8%);
+            background-color: #ffffff20;
+            backdrop-filter: blur(0.2rem);
+            height: 100%;
+            aspect-ratio: 4/5;
+            display: grid;
+            grid-template-rows: 5fr 2fr;
+            border-radius: 1rem;
+            border: 2px solid white;
+        }
+
+        .skillLogo {
+            position: relative;
+        }
+
+        .skillImage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* width: 50%; */
+            animation: 2s ossilate ease-out infinite;
+            padding: 5%;
+            aspect-ratio: 1/1;
+            align-items: center;
+        }
+
+        .skillOGname {
+            color: white;
+            font-size: 10%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="summery">
+            <div id="textContainer">
+                <p id="text1">I'm</p>
+                <p id="text2">Durdanta Halder</p>
+                <p id="text3">Python & Web Developer</p>
+                <a id="contact" href="mailto:durdantathink14@gmail.com">
+                    <p id="contactB">Contact Me</button></p>
+            </div>
+            <a href="https://ibb.co/8MpwMXB"><img id="bgi" src="https://i.ibb.co/G7LD7FJ/durdanta.png" alt="durdanta"
+                     border="0"></a>
+
+        </div>
+        <div id="aboutMe">
+            <h3>About Me</h3>
+            <a href="https://ibb.co/GcJwvcg"><img id="dp" src="https://i.ibb.co/nz02szh/20241002-015026.png"
+                    alt="20241002-015026"  border="0"></a>
+            <p id="about">Hello! I'm Durdanta Halder, a passionate Python developer with a focus on data science and web
+                development. Currently, I am pursuing my studies at BPC Institute of Technology, where I’m honing my
+                skills in programming, data analytics, and building web applications. With a love for solving real-world
+                problems using code, I specialize in Python for both backend development and data-driven projects. Based
+                in Krishnagar, I enjoy exploring new technologies and am always eager to take on exciting challenges.
+                Let's collaborate and bring innovative solutions to life!</p>
+        </div>
+
+        <div id="mySkill">
+            <h3 id="mySkillT">My Skills</h3>
+            <div id="skillSet">
+                <div class="skill">
+                    <div class="skillLogo"><a href="https://ibb.co/fNXNJK3"><img class="skillImage"
+                                src="https://i.ibb.co/s1g17DT/pngwing-com-1.png" alt="pngwing-com-1"  border="0"></a>
+                    </div>
+                    <div class="skillName">
+                        <p class="skillOGname">Python Data Science</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skillLogo"><a href="https://ibb.co/MsHcSbJ"><img class="skillImage"
+                                src="https://i.ibb.co/563r4dJ/pngwing-com-2.png" alt="pngwing-com-2"  border="0"></a>
+                    </div>
+                    <div class="skillName">
+                        <p class="skillOGname">HTML</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skillLogo"><a href="https://ibb.co/tCYqBsd"><img class="skillImage"
+                                src="https://i.ibb.co/F7856wP/pngwing-com-3.png" alt="pngwing-com-3"  border="0"></a>
+                    </div>
+                    <div class="skillName">
+                        <p class="skillOGname">CSS</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skillLogo"><a href="https://ibb.co/XCDFNLt"><img class="skillImage"
+                                src="https://i.ibb.co/KrDVRhW/pngwing-com-4.png" alt="pngwing-com-4" border="0"></a>
+                    </div>
+                    <div class="skillName">
+                        <p class="skillOGname">JavaScript</p>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skillLogo"><a href="https://ibb.co/ds9KP1B"><img class="skillImage"
+                                src="https://i.ibb.co/SDTvtWN/pngwing-com-5.png" alt="pngwing-com-5" border="0"></a>
+                    </div>
+                    <div class="skillName">
+                        <p class="skillOGname">Google Cloud Console</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
