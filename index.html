@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
     <title>Durdanta's Portfolio</title>
     <style>
         body {
@@ -44,8 +51,11 @@
 
         #text2 {
             color: #f9cb6c;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-size: 150%;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 180%;
         }
 
         #text3 {
@@ -154,6 +164,11 @@
             border: 0.2rem solid #f9cb6c;
             border-radius: 2rem;
             position: relative;
+            font-family: "Fredoka", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
         }
 
         #about::after,
@@ -173,12 +188,12 @@
             filter: blur(10rem);
         }
 
-        #mySkill{
+        #mySkill {
             display: grid;
             grid-template-columns: 1fr;
         }
 
-        #mySkillT{
+        #mySkillT {
             text-align: center;
         }
 
@@ -195,16 +210,16 @@
             border: 0.1rem solid white;
         }
 
-        @keyframes ossilate{
-            0%{
+        @keyframes ossilate {
+            0% {
                 width: 50%;
             }
 
-            50%{
+            50% {
                 width: 80%;
             }
 
-            100%{
+            100% {
                 width: 50%;
             }
         }
